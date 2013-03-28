@@ -5,6 +5,12 @@ gem 'pg'
 gem 'jquery-rails'
 gem 'haml'
 gem 'bcrypt-ruby'
+gem 'geocoder'
+gem 'carrierwave'
+gem 'fog'
+gem 'rmagick'
+gem 'remotipart'
+gem 'postmark'
 
 group :assets do
   gem 'sass-rails'
