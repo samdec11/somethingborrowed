@@ -19,4 +19,11 @@ describe Category do
       expect(cat.name).to eq "books"
     end
   end
+
+  describe "#items" do
+    it "should have many items" do
+      cat = FactoryGirl.create(:category)
+      expect(cat.items).to eq []
+    end
+  end
 end
