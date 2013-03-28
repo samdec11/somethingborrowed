@@ -17,4 +17,6 @@ class Item < ActiveRecord::Base
   validates :name, :presence => true
   validates :description, :presence => true
   has_and_belongs_to_many :categories
+  has_many :borrows
+  belongs_to :user
 end
