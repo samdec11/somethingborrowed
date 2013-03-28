@@ -45,6 +45,15 @@ ActiveRecord::Schema.define(:version => 20130328232837) do
     t.datetime "updated_at",   :null => false
   end
 
+  create_table "reviews", :force => true do |t|
+    t.string  "title"
+    t.integer "rating"
+    t.date    "post_date"
+    t.text    "text"
+    t.integer "reviewable_id"
+    t.string  "reviewable_type"
+  end
+
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "email"
