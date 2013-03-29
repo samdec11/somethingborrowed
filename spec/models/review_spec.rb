@@ -46,7 +46,7 @@ describe Review do
   end
 
   describe '#user' do
-    it 'returns a User object' do
+    it 'belongs to a user' do
       borrower_review.user = user
       expect(borrower_review.user).to be_an_instance_of(User)
     end
