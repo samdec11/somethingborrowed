@@ -7,6 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div id="nav_holder">
+    <%= render :partial => 'layouts/nav' %>
+  </div>
+  <div class="row">
+    <div class="small-3 small-offset-9">
+      <div id="login_form"></div>
+    </div>
+  </div>
 
 <%= yield %>
 

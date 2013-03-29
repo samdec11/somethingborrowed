@@ -1,0 +1,6 @@
+<% if @auth.present? %>
+  $("#login_form").empty();
+  $("#nav_holder").empty().append("<%=j render :partial => 'layouts/nav' %>");
+<% else %>
+  $("#login_form").effect("bounce", 500);
+<% end %>
