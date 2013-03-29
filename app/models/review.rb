@@ -13,7 +13,7 @@
 #
 
 class Review < ActiveRecord::Base
-  attr_accessible :title, :rating, :post_date, :text
+  attr_accessible :title, :rating, :text
   belongs_to :reviewable, :polymorphic => true
   belongs_to :user
   validates :title, :presence => true
@@ -23,5 +23,11 @@ class Review < ActiveRecord::Base
   end
   def borrower
     self.reviewable if self.reviewable.is_a?(User)
+  end
+
+  before_save :get_date
+  private
+  def get_date
+    self.post_date = Date.today
   end
 end
