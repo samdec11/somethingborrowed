@@ -27,10 +27,18 @@ describe Item do
       expect(item.id).to be nil
     end
   end
-  # descript '#user' do
-  #   it 'belongs to a user'
-  #   user = FactoryGirl.create(:user)
-  #   user.items << item
-  #   expect(item.user).to eq user
-  # end
+  describe '#user' do
+    it 'belongs to a user' do
+      user = FactoryGirl.create(:user)
+      user.items << item
+      expect(item.user).to eq user
+    end
+  end
+
+  describe "#borrows" do
+    it "should have many borrows" do
+      item = FactoryGirl.create(:item)
+      expect(item.borrows).to eq []
+    end
+  end
 end

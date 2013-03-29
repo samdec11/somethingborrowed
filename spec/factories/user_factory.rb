@@ -11,10 +11,11 @@
 #  updated_at      :datetime         not null
 #
 
-class User < ActiveRecord::Base
-  has_secure_password
-  attr_accessible :name, :email, :image, :password, :password_confirmation
-  has_many :items
-  has_many :reviews, :as => :reviewable
-  has_many :reviews
+FactoryGirl.define do
+  factory :user, class: User do
+    name                  'jane'
+    email                 "jane@jane.com"
+    password              "abc"
+    password_confirmation "abc"
+  end
 end
