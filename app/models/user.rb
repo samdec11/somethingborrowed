@@ -22,6 +22,25 @@ class User < ActiveRecord::Base
   has_many :reviews
   mount_uploader :image, UserImageUploader
 
+  def lends
+    Borrow.where(:owner_id => self.id)
+  end
+  def borrows
+    Borrow.where(:borrower_id => self.id)
+  end
+  def currently_borrowing
+    Borrow.where(:borrower_id => self.id ).where(:active => true)
+  end
+  def currently_lending
+    Borrow.where(:owner_id => self.id).where(:active => true)
+  end
+  def previously_borrowed
+    Borrow.where(:borrower_id => self.id).where(:active => false)
+  end
+  def previously_lent
+    Borrow.where(:owner_id => self.id).where(:active => false)
+  end
+
   before_save :get_coords
   private
   def get_coords
