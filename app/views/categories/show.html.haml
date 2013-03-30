@@ -1,0 +1,7 @@
+%h1= @category.name
+%table
+  %tr
+    %th Name
+  - @category.items.each do |item|
+    %tr
+      %td= item.name
