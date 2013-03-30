@@ -5,6 +5,7 @@ Somethingborrowed::Application.routes.draw do
       get "map"
     end
   end
+  resources :categories, :only => [:show]
   resources :users
   get '/login' => 'session#new'
   post '/login' => 'session#create'
