@@ -1,4 +1,7 @@
 User.delete_all
+Item.delete_all
+Category.delete_all
+Borrow.delete_all
 
 u1 = User.create(name:"Jane", email:"janesternbach+1@gmail.com", password:"abc", password_confirmation:"abc")
 u2 = User.create(name:"Sean", email:"seanwdicourse+1@gmail.com", password:"abc", password_confirmation:"abc")
@@ -6,23 +9,54 @@ u3 = User.create(name:"Bob", email:"janesternbach+1@gmail.com", password:"abc", 
 u4 = User.create(name:"Sue", email:"seanwdicourse+1@gmail.com", password:"abc", password_confirmation:"abc")
 
 i1 = Item.create(name:"blender", description:"A fully functional ice blending machine with top included", instructions:"insert items to be blended, place top securely, and press start button")
-i2 = Item.create(name:"toaster", image:"https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR27dIdnmt_W73v-sKKFwL2TnCkFzggNnLu3gmaYhoO6tzXdBL97Q", description:"I'd rather be dead in California than alive in Arizona. I prematurely shot my wad on what was supposed to be a dry run..so now I'm afraid I have something of a mess on my hands", instructions:"Uncle Gob… was Aunt Lindsay ever pregnant? Yeah, sure, dozens of times. You just made a fool out of yourself in front of T-Bone. No, Pop-pop does not get a treat. I just bought you a f**king pizza. But anyhoo, can you believe that the only reason the club is going under is because it's in a terrifying neighborhood?")
-i3 = Item.create(name:"chainsaw", image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjtE6WLz6A8xFommiu64kTnlgzsNPEAhoTLTNlZTk8fCp-AcCdCA", description:"I'd rather be dead in California than alive in Arizona. I prematurely shot my wad on what was supposed to be a dry run..so now I'm afraid I have something of a mess on my hands", instructions:"Uncle Gob… was Aunt Lindsay ever pregnant? Yeah, sure, dozens of times. You just made a fool out of yourself in front of T-Bone. No, Pop-pop does not get a treat. I just bought you a f**king pizza. But anyhoo, can you believe that the only reason the club is going under is because it's in a terrifying neighborhood?")
-i4 = Item.create(name:"xbobx", image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfHBWTTi446iD1iPsDFs4BKnNdF5LrtTJy8O51A50t7X4vM1k6Dg", description:"I'd rather be dead in California than alive in Arizona. I prematurely shot my wad on what was supposed to be a dry run..so now I'm afraid I have something of a mess on my hands", instructions:"Uncle Gob… was Aunt Lindsay ever pregnant? Yeah, sure, dozens of times. You just made a fool out of yourself in front of T-Bone. No, Pop-pop does not get a treat. I just bought you a f**king pizza. But anyhoo, can you believe that the only reason the club is going under is because it's in a terrifying neighborhood?")
-i5 = Item.create(name:"karaoke machine", image:"http://images.miretail.com/products/full/TheSingingMachine/634873359154412641.jpg", description:"I'd rather be dead in California than alive in Arizona. I prematurely shot my wad on what was supposed to be a dry run..so now I'm afraid I have something of a mess on my hands", instructions:"Uncle Gob… was Aunt Lindsay ever pregnant? Yeah, sure, dozens of times. You just made a fool out of yourself in front of T-Bone. No, Pop-pop does not get a treat. I just bought you a f**king pizza. But anyhoo, can you believe that the only reason the club is going under is because it's in a terrifying neighborhood?")
-i6 = Item.create(name:"chocolate fountain", image:"http://www.bellaweddingrentals.com/images/chocolate_fountain_sm.jpg", description:"I'd rather be dead in California than alive in Arizona. I prematurely shot my wad on what was supposed to be a dry run..so now I'm afraid I have something of a mess on my hands", instructions:"Uncle Gob… was Aunt Lindsay ever pregnant? Yeah, sure, dozens of times. You just made a fool out of yourself in front of T-Bone. No, Pop-pop does not get a treat. I just bought you a f**king pizza. But anyhoo, can you believe that the only reason the club is going under is because it's in a terrifying neighborhood?")
-i7 = Item.create(name:"xbobx", image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfHBWTTi446iD1iPsDFs4BKnNdF5LrtTJy8O51A50t7X4vM1k6Dg", description:"I'd rather be dead in California than alive in Arizona. I prematurely shot my wad on what was supposed to be a dry run..so now I'm afraid I have something of a mess on my hands", instructions:"Uncle Gob… was Aunt Lindsay ever pregnant? Yeah, sure, dozens of times. You just made a fool out of yourself in front of T-Bone. No, Pop-pop does not get a treat. I just bought you a f**king pizza. But anyhoo, can you believe that the only reason the club is going under is because it's in a terrifying neighborhood?")
-i8 = Item.create(name:"fondue set", image:"https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQBMRohCfUIpjRfWcuYeenyViju-pC9TihmvrlbNEwb0GTw3mGNZQ", description:"I'd rather be dead in California than alive in Arizona. I prematurely shot my wad on what was supposed to be a dry run..so now I'm afraid I have something of a mess on my hands", instructions:"Uncle Gob… was Aunt Lindsay ever pregnant? Yeah, sure, dozens of times. You just made a fool out of yourself in front of T-Bone. No, Pop-pop does not get a treat. I just bought you a f**king pizza. But anyhoo, can you believe that the only reason the club is going under is because it's in a terrifying neighborhood?")
+i2 = Item.create(name:"toaster", description:"Or perhaps he's wondering why someone would shoot a man before throwing him out of the plane.", instructions:"Ooh, you think darkness is your ally? You merely adopted the dark, I was born in it. Molded by it. I didn't see the light until I was already a man. By then there was nothing to be but blinded.")
+i3 = Item.create(name:"chainsaw", description:"Or perhaps he's wondering why someone would shoot a man before throwing him out of the plane.", instructions:"Ooh, you think darkness is your ally? You merely adopted the dark, I was born in it. Molded by it. I didn't see the light until I was already a man. By then there was nothing to be but blinded.")
+i4 = Item.create(name:"xbobx", description:"Or perhaps he's wondering why someone would shoot a man before throwing him out of the plane.", instructions:"Ooh, you think darkness is your ally? You merely adopted the dark, I was born in it. Molded by it. I didn't see the light until I was already a man. By then there was nothing to be but blinded.")
+i5 = Item.create(name:"karaoke machine", description:"Or perhaps he's wondering why someone would shoot a man before throwing him out of the plane.", instructions:"Ooh, you think darkness is your ally? You merely adopted the dark, I was born in it. Molded by it. I didn't see the light until I was already a man. By then there was nothing to be but blinded.")
+i6 = Item.create(name:"chocolate fountain", description:"Or perhaps he's wondering why someone would shoot a man before throwing him out of the plane.", instructions:"Ooh, you think darkness is your ally? You merely adopted the dark, I was born in it. Molded by it. I didn't see the light until I was already a man. By then there was nothing to be but blinded.")
+i7 = Item.create(name:"fondue set", description:"Or perhaps he's wondering why someone would shoot a man before throwing him out of the plane.", instructions:"Ooh, you think darkness is your ally? You merely adopted the dark, I was born in it. Molded by it. I didn't see the light until I was already a man. By then there was nothing to be but blinded.")
 
 u1.items << i1 << i2 << i3 << i4
-u2.items << i5 << i6 << i7 << i8
+u2.items << i5 << i6 << i7
 
-c1 = Category.create(name:"")
-c1 = Category.create(name:"")
-c1 = Category.create(name:"")
-c1 = Category.create(name:"")
-c1 = Category.create(name:"")
-c1 = Category.create(name:"")
-c1 = Category.create(name:"")
-c1 = Category.create(name:"")
-c1 = Category.create(name:"")
+c1 = Category.create(name:"Books")
+c2 = Category.create(name:"Movies, Music and Games")
+c3 = Category.create(name:"Electronics and Computers")
+c4 = Category.create(name:"Home, Garden and Tools")
+c5 = Category.create(name:"Grocery, Health and Beauty")
+c6 = Category.create(name:"Toys, Kids and Baby")
+c7 = Category.create(name:"Clothing, Shoes and Jewelry")
+c8 = Category.create(name:"Sports and Outdoors")
+c9 = Category.create(name:"Automotive and Industrial")
+
+i1.categories << c4
+i2.categories << c4
+i3.categories << c4
+i4.categories << c3 << c2
+i5.categories << c3 << c2
+i6.categories << c4 << c5
+i7.categories << c4 << c5
+
+
+b1 = Borrow.create
+b2 = Borrow.create
+
+b1.owner = u1
+b1.item = i1
+b1.borrower = u2
+b1.active = false
+b1.borrow_date = Date.today
+b1.return_date = Date.tomorrow
+b1.save
+
+b2.owner = u2
+b2.item = i5
+b2.borrower = u1
+b2.active = true
+b2.borrow_date = Date.today
+b2.return_date = Date.tomorrow
+b2.save
+
+
+
+

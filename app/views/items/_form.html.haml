@@ -1,6 +1,8 @@
-= form_for @item, :remote => true do |f|
+= form_for @item, :html => {:multipart => true}, :remote => true do |f|
   = f.text_field :name, :autofocus => true, :placeholder => 'Name'
-  = f.text_field :image, :placeholder => 'Image'
+  = f.label :image
+  = f.file_field :image
+  = f.text_field :remote_image_url
   = f.text_area :description, :placeholder => 'Description'
   = f.text_area :instructions, :placeholder => 'Instructions'
   = link_to('Cancel', '#', :'data-clear-form' => true, :class => 'button round alert tiny')
