@@ -1,3 +1,23 @@
-%h1 This is home. GO TO YOUR HOME, LITTLE MAN.
-= link_to 'New Item', new_item_path, :remote => true, :class => 'button round tiny'
-#form
+
+%ul.side-nav#side-nav
+  -@categories.each do |cat|
+    %li= link_to(cat.name, "#")
+
+.row
+  .small-9.small-centered.columns
+    #search
+      %span= text_field_tag :search
+      %span= link_to("Search", "#", :class => "button radius tiny")
+    #map_search
+      = link_to("Items Near Me", "#", :class => "button radius")
+
+.row
+  .small-10.small-centered.columns
+    %h3 Most Popular Items
+    #pop
+      %table
+        %tr
+        -@popular.each do |pop|
+          %td
+            = image_tag(pop.image)
+            = pop.name

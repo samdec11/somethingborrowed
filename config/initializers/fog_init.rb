@@ -11,6 +11,6 @@ CarrierWave.configure do |config|
   # config.asset_host   = 'https://assets.example.com'              # optional, defaults to nil
 end
 
-CarrierWave.configure {|config| config.fog_directory = 'something-sean-regular'} if Rails.env.development?
-CarrierWave.configure {|config| config.fog_directory = 'something-sean-test'} if Rails.env.test?
-CarrierWave.configure {|config| config.fog_directory = 'something-sean-regular'} if Rails.env.production?
+CarrierWave.configure {|config| config.fog_directory = 'jane-smthngbrrwed'} if Rails.env.development?
+CarrierWave.configure {|config| config.fog_directory = 'jane-smthngbrrwed'} if Rails.env.test?
+CarrierWave.configure {|config| config.fog_directory = 'jane-smthngbrrwed'} if Rails.env.production?

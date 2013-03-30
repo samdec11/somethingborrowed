@@ -9,6 +9,9 @@
 #  password_digest :string(255)
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  address         :text
+#  lat             :float
+#  long            :float
 #
 
 FactoryGirl.define do

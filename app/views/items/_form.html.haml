@@ -3,6 +3,10 @@
   = f.label :image
   = f.file_field :image
   = f.text_field :remote_image_url
+  = f.label :available_from
+  = f.text_field :available_from
+  = f.label :available_until
+  = f.text_field :available_until
   = f.text_area :description, :placeholder => 'Description'
   = f.text_area :instructions, :placeholder => 'Instructions'
   = link_to('Cancel', '#', :'data-clear-form' => true, :class => 'button round alert tiny')

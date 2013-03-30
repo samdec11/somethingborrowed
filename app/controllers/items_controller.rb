@@ -4,5 +4,9 @@ class ItemsController < ApplicationController
   end
   def create
     @item = Item.create(params[:item])
+    @auth.items << @item
+  end
+
+  def map
   end
 end

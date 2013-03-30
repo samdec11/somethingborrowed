@@ -9,15 +9,18 @@
 #  password_digest :string(255)
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  address         :text
+#  lat             :float
+#  long            :float
 #
 
 class User < ActiveRecord::Base
   has_secure_password
-  attr_accessible :name, :email, :image, :password, :password_confirmation, :remote_image_url
+  attr_accessible :name, :email, :image, :password, :password_confirmation, :remote_image_url, :address
   has_many :items
   has_many :reviews, :as => :reviewable
   has_many :reviews
-  mount_uploader :image, ImageUploader
+  mount_uploader :image, UserImageUploader
 
   before_save :get_coords
   private

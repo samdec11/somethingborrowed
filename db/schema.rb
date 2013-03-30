@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130330004618) do
+ActiveRecord::Schema.define(:version => 20130330182022) do
 
   create_table "borrows", :force => true do |t|
     t.integer  "owner_id"
@@ -38,11 +38,13 @@ ActiveRecord::Schema.define(:version => 20130330004618) do
   create_table "items", :force => true do |t|
     t.string   "name"
     t.string   "description"
-    t.text     "image",        :default => "blender.jpg"
+    t.text     "image",           :default => "blender.jpg"
     t.text     "instructions"
     t.integer  "user_id"
-    t.datetime "created_at",                              :null => false
-    t.datetime "updated_at",                              :null => false
+    t.datetime "created_at",                                 :null => false
+    t.datetime "updated_at",                                 :null => false
+    t.date     "available_from"
+    t.date     "available_until"
   end
 
   create_table "reviews", :force => true do |t|

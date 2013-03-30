@@ -1,6 +1,7 @@
 <% if @item.valid? %>
   $('#form').empty().after('<p>You have successfully added an item!</p>');
   $('#form + p').fadeOut(3000, function(){ $('#form + p').remove(); });
+  $("#my_items").empty().append("<%=j render 'items/users_items' %>")
 <% else %>
   $('#form').empty().append('<%=j render :partial => 'items/form' %>')
 <% end %>
