@@ -1,3 +1,28 @@
 User.delete_all
 
-u1 = User.create(name:"Jane", email:"jane@jane.com", password:"abc", password_confirmation:"abc")
+u1 = User.create(name:"Jane", email:"janesternbach+1@gmail.com", password:"abc", password_confirmation:"abc")
+u2 = User.create(name:"Sean", email:"seanwdicourse+1@gmail.com", password:"abc", password_confirmation:"abc")
+u3 = User.create(name:"Bob", email:"janesternbach+1@gmail.com", password:"abc", password_confirmation:"abc")
+u4 = User.create(name:"Sue", email:"seanwdicourse+1@gmail.com", password:"abc", password_confirmation:"abc")
+
+i1 = Item.create(name:"blender", description:"A fully functional ice blending machine with top included", instructions:"insert items to be blended, place top securely, and press start button")
+i2 = Item.create(name:"toaster", image:"https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR27dIdnmt_W73v-sKKFwL2TnCkFzggNnLu3gmaYhoO6tzXdBL97Q", description:"I'd rather be dead in California than alive in Arizona. I prematurely shot my wad on what was supposed to be a dry run..so now I'm afraid I have something of a mess on my hands", instructions:"Uncle Gob… was Aunt Lindsay ever pregnant? Yeah, sure, dozens of times. You just made a fool out of yourself in front of T-Bone. No, Pop-pop does not get a treat. I just bought you a f**king pizza. But anyhoo, can you believe that the only reason the club is going under is because it's in a terrifying neighborhood?")
+i3 = Item.create(name:"chainsaw", image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjtE6WLz6A8xFommiu64kTnlgzsNPEAhoTLTNlZTk8fCp-AcCdCA", description:"I'd rather be dead in California than alive in Arizona. I prematurely shot my wad on what was supposed to be a dry run..so now I'm afraid I have something of a mess on my hands", instructions:"Uncle Gob… was Aunt Lindsay ever pregnant? Yeah, sure, dozens of times. You just made a fool out of yourself in front of T-Bone. No, Pop-pop does not get a treat. I just bought you a f**king pizza. But anyhoo, can you believe that the only reason the club is going under is because it's in a terrifying neighborhood?")
+i4 = Item.create(name:"xbobx", image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfHBWTTi446iD1iPsDFs4BKnNdF5LrtTJy8O51A50t7X4vM1k6Dg", description:"I'd rather be dead in California than alive in Arizona. I prematurely shot my wad on what was supposed to be a dry run..so now I'm afraid I have something of a mess on my hands", instructions:"Uncle Gob… was Aunt Lindsay ever pregnant? Yeah, sure, dozens of times. You just made a fool out of yourself in front of T-Bone. No, Pop-pop does not get a treat. I just bought you a f**king pizza. But anyhoo, can you believe that the only reason the club is going under is because it's in a terrifying neighborhood?")
+i5 = Item.create(name:"karaoke machine", image:"http://images.miretail.com/products/full/TheSingingMachine/634873359154412641.jpg", description:"I'd rather be dead in California than alive in Arizona. I prematurely shot my wad on what was supposed to be a dry run..so now I'm afraid I have something of a mess on my hands", instructions:"Uncle Gob… was Aunt Lindsay ever pregnant? Yeah, sure, dozens of times. You just made a fool out of yourself in front of T-Bone. No, Pop-pop does not get a treat. I just bought you a f**king pizza. But anyhoo, can you believe that the only reason the club is going under is because it's in a terrifying neighborhood?")
+i6 = Item.create(name:"chocolate fountain", image:"http://www.bellaweddingrentals.com/images/chocolate_fountain_sm.jpg", description:"I'd rather be dead in California than alive in Arizona. I prematurely shot my wad on what was supposed to be a dry run..so now I'm afraid I have something of a mess on my hands", instructions:"Uncle Gob… was Aunt Lindsay ever pregnant? Yeah, sure, dozens of times. You just made a fool out of yourself in front of T-Bone. No, Pop-pop does not get a treat. I just bought you a f**king pizza. But anyhoo, can you believe that the only reason the club is going under is because it's in a terrifying neighborhood?")
+i7 = Item.create(name:"xbobx", image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfHBWTTi446iD1iPsDFs4BKnNdF5LrtTJy8O51A50t7X4vM1k6Dg", description:"I'd rather be dead in California than alive in Arizona. I prematurely shot my wad on what was supposed to be a dry run..so now I'm afraid I have something of a mess on my hands", instructions:"Uncle Gob… was Aunt Lindsay ever pregnant? Yeah, sure, dozens of times. You just made a fool out of yourself in front of T-Bone. No, Pop-pop does not get a treat. I just bought you a f**king pizza. But anyhoo, can you believe that the only reason the club is going under is because it's in a terrifying neighborhood?")
+i8 = Item.create(name:"fondue set", image:"https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQBMRohCfUIpjRfWcuYeenyViju-pC9TihmvrlbNEwb0GTw3mGNZQ", description:"I'd rather be dead in California than alive in Arizona. I prematurely shot my wad on what was supposed to be a dry run..so now I'm afraid I have something of a mess on my hands", instructions:"Uncle Gob… was Aunt Lindsay ever pregnant? Yeah, sure, dozens of times. You just made a fool out of yourself in front of T-Bone. No, Pop-pop does not get a treat. I just bought you a f**king pizza. But anyhoo, can you believe that the only reason the club is going under is because it's in a terrifying neighborhood?")
+
+u1.items << i1 << i2 << i3 << i4
+u2.items << i5 << i6 << i7 << i8
+
+c1 = Category.create(name:"")
+c1 = Category.create(name:"")
+c1 = Category.create(name:"")
+c1 = Category.create(name:"")
+c1 = Category.create(name:"")
+c1 = Category.create(name:"")
+c1 = Category.create(name:"")
+c1 = Category.create(name:"")
+c1 = Category.create(name:"")
