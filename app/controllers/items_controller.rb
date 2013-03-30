@@ -8,5 +8,6 @@ class ItemsController < ApplicationController
   end
 
   def map
+    @items = Item.all
   end
 end

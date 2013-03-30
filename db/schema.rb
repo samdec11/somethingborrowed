@@ -38,11 +38,11 @@ ActiveRecord::Schema.define(:version => 20130330182022) do
   create_table "items", :force => true do |t|
     t.string   "name"
     t.string   "description"
-    t.text     "image",           :default => "blender.jpg"
+    t.text     "image"
     t.text     "instructions"
     t.integer  "user_id"
-    t.datetime "created_at",                                 :null => false
-    t.datetime "updated_at",                                 :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
     t.date     "available_from"
     t.date     "available_until"
   end
@@ -60,10 +60,10 @@ ActiveRecord::Schema.define(:version => 20130330182022) do
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "email"
-    t.text     "image",           :default => "batman.jpg"
+    t.text     "image"
     t.string   "password_digest"
-    t.datetime "created_at",                                :null => false
-    t.datetime "updated_at",                                :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
     t.text     "address"
     t.float    "lat"
     t.float    "long"

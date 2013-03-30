@@ -6,3 +6,4 @@
 //= require 'foundation/js/vendor/zepto.js'
 //= require 'foundation/js/foundation.min.js'
 //= require 'borrowed'
+//= require 'mapping'
