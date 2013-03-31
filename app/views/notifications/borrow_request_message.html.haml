@@ -1,0 +1,6 @@
+%p= "Dear #{@owner.name},"
+%p= "#{@borrower.name} has requested to borrow your #{@item.name}. Please follow the link to provide #{@borrower.name} with instructions on where and when to pick it up."
+%p
+  %a{:href => "/items/borrow_instructions?borrower=#{@borrower.id}&item=#{@item.id}&owner=#{@owner.id}"} Borrow Instructions Form
+%p Thank you,
+%p Something Borrowed Staff

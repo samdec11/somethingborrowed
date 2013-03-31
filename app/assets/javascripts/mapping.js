@@ -1,7 +1,3 @@
-$(function(){
-
-});
-
 var map;
 
 function display_map(lat, lng, zoom)

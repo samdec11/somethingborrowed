@@ -3,9 +3,9 @@
     %h3 Items near you:
     #map_canvas
     %script
-      navigator.geolocation.getCurrentPosition(function(p){ display_map(p.coords.latitude, p.coords.longitude, 13); add_init_marker(p.coords.latitude, p.coords.longitude, "10")})
+      navigator.geolocation.getCurrentPosition(function(p){ display_map(p.coords.latitude, p.coords.longitude, 13); add_init_marker(p.coords.latitude, p.coords.longitude, "10")});
       - @items.each do |item|
-        = "add_marker(#{item.lat}, #{item.long}, '#{item.name}')"
+        = "add_marker(#{item.lat}, #{item.long}, '#{item.name}');"
 
 
 

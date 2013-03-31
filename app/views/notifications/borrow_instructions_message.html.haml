@@ -1,0 +1,16 @@
+%p= "Dear #{@borrower.name},"
+%p= "The following are the instructions for borrowing #{@owner.name}'s #{@item.name}:"
+%ul
+  %li= "Where: #{@where}"
+  %li= "When: #{@when}"
+  %li= "Special Instructions: #{@spec_instructions}"
+
+%p= "If you need to contact #{@owner.name} futher, #{@owner.name} can be reached at:"
+%ul
+  %li= "Phone: #{@phone}"
+  %li= "Email: #{@email}"
+
+%p= "We hope you enjoy borrowing #{@owner.name}'s #{@item.name}. And remember to be courteous and return it on time."
+%p Thanks,
+%p Something Borrowed Staff
+

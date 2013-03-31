@@ -1,8 +1,13 @@
 Somethingborrowed::Application.routes.draw do
   root :to => 'home#index'
-  resources :items, :only => [:new, :create] do
+  resources :items do
     collection do
       get "map"
+      get "borrow_instructions"
+      post "deliver_borrow_instructions"
+    end
+    member do
+      get "borrow_request"
     end
   end
   resources :categories, :only => [:show]

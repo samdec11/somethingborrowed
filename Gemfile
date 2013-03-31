@@ -10,7 +10,8 @@ gem 'carrierwave'
 gem 'fog'
 gem 'rmagick'
 gem 'remotipart'
-gem 'postmark'
+gem 'titleize'
+gem 'aws-ses'
 
 group :assets do
   gem 'sass-rails'

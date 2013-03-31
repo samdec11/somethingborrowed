@@ -16,8 +16,10 @@ i5 = Item.create(name:"karaoke machine", description:"Or perhaps he's wondering 
 i6 = Item.create(name:"chocolate fountain", description:"Or perhaps he's wondering why someone would shoot a man before throwing him out of the plane.", instructions:"Ooh, you think darkness is your ally? You merely adopted the dark, I was born in it. Molded by it. I didn't see the light until I was already a man. By then there was nothing to be but blinded.", available_from:"2013-05-15", available_until:"2013-05-31")
 i7 = Item.create(name:"fondue set", description:"Or perhaps he's wondering why someone would shoot a man before throwing him out of the plane.", instructions:"Ooh, you think darkness is your ally? You merely adopted the dark, I was born in it. Molded by it. I didn't see the light until I was already a man. By then there was nothing to be but blinded.", available_from:"2013-04-09", available_until:"2013-04-13")
 
-u1.items << i1 << i2 << i3 << i4
-u2.items << i5 << i6 << i7
+u1.items << i1 << i4
+u2.items << i5 << i7
+u3.items << i2 << i6
+u4.items << i3
 
 c1 = Category.create(name:"Books")
 c2 = Category.create(name:"Movies, Music and Games")
