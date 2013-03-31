@@ -1,0 +1,8 @@
+%h3 Most Popular Items
+#pop
+  %table
+    %tr
+    -@popular.each do |pop|
+      %td
+        = image_tag(pop.image)
+        = pop.name

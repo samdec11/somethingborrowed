@@ -3,6 +3,7 @@ Somethingborrowed::Application.routes.draw do
   resources :items, :only => [:new, :create] do
     collection do
       get "map"
+      get 'search'
     end
   end
   resources :categories, :only => [:show]

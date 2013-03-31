@@ -10,4 +10,9 @@ class ItemsController < ApplicationController
   def map
     @items = Item.all
   end
+
+  def search
+    query = params[:query]
+    @items = Item.where("name @@ :q or description @@ :q or image @@ :q", :q => query)
+  end
 end
