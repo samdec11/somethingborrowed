@@ -5,6 +5,7 @@ class Home
     $("#form").on("focus", "#item_available_from", Home.pick_from_date)
     $("#form").on("focus", "#item_available_until", Home.pick_until_date)
     $('#search_button').click(Home.search)
+    $('#search_form').submit(Home.search)
 
   @clear_form: (e) ->
     e.preventDefault()
