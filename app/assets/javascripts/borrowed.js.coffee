@@ -6,6 +6,7 @@ class Home
     $("#form").on("focus", "#item_available_until", Home.pick_until_date)
     $('#search_button').click(Home.search)
     $('#search_form').submit(Home.search)
+    # $('#search').autocomplete({ source: Home.search_complete });
 
   @clear_form: (e) ->
     e.preventDefault()
@@ -29,5 +30,8 @@ class Home
       type: 'get'
       url: "/items/search?query=#{input}"
     $.ajax(settings)
+
+  # @search_complete: (request, response) ->
+  #   console.log(request)
 
 $(document).ready(Home.document_ready)
