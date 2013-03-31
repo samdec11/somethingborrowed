@@ -8,6 +8,7 @@ Somethingborrowed::Application.routes.draw do
     end
     member do
       get "borrow_request"
+      get 'search'
     end
   end
   resources :categories, :only => [:show]

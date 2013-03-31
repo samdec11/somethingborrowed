@@ -1,25 +1,9 @@
-
-%ul.side-nav#side-nav
-  -@categories.each do |cat|
-    %li= link_to(cat.name, category_path(cat))
-
 .row
   .small-9.small-centered.columns
-    .row
-      .small-10.columns#search
-        = text_field_tag :search
-      .small-2.columns= link_to("Search", "#", :class => "button radius small")
-    .row
-      .small-4.small-centered.columns#map_search
-        = link_to("Items Near Me", map_items_path, :class => "button radius")
+    #map_search
+      = link_to("Items Near Me", map_items_path, :class => "button radius")
 
 .row
   .small-10.small-centered.columns
-    %h3 Most Popular Items
-    #pop
-      %table
-        %tr
-        -@popular.each do |pop|
-          %td
-            = link_to(image_tag(pop.image), item_path(pop.id))
-            = link_to(pop.name, item_path(pop.id))
+    #content
+      = render 'items/popular'
