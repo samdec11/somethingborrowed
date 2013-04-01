@@ -1,0 +1,5 @@
+<% if @response == "now" %>
+  $("#verification").empty().append("<%=j render 'form' %>");
+<% else %>
+  $("#verification").empty().append("<p>A reminder has been sent to your email inbox.</p>");
+<% end %>

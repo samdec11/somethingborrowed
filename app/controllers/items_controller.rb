@@ -8,7 +8,7 @@ class ItemsController < ApplicationController
   end
 
   def map
-    @items = Item.all
+    @items = Item.all.select{|x| x.is_borrowed? == false}
   end
 
 
@@ -35,5 +35,26 @@ class ItemsController < ApplicationController
   def search
     query = params[:query]
     @items = Item.where("name @@ :q or description @@ :q or image @@ :q", :q => query)
+  end
+
+  def return_verification
+    Notifications.return_verification_message(Borrow.find(params[:borrow])).deliver
+    render :json => "delivered"
+  end
+
+  def return_verification_validation
+    @borrow = Borrow.find(params[:borrow])
+  end
+
+  def return
+    @borrow = Borrow.find(params[:borrow])
+    if params[:answer] == "yes"
+      @borrow.active = false
+      @borrow.return_date = Date.today.to_s
+      @borrow.save
+      @borrow
+    else
+      @borrow
+    end
   end
 end

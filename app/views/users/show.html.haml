@@ -12,3 +12,27 @@
     %h4 My Items
     #my_items
       = render 'items/users_items'
+
+.row
+  .large-12.large-centered.columns
+    %h4 Currently Borrowing
+    #borrowing_items
+      = render 'currently_borrowing'
+
+.row
+  .large-12.large-centered.columns
+    %h4 Currently Lending
+    #lending_items
+      = render 'currently_lending'
+
+.row
+  .large-12.large-centered.columns
+    %h4 Previously Borrowed
+    #borrowed_items
+      = render 'previously_borrowed'
+
+.row
+  .large-12.large-centered.columns
+    %h4 Previously Lent
+    #borrowed_items
+      = render 'previously_lent'

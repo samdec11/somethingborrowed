@@ -1,0 +1,5 @@
+<% if @borrow.active == false %>
+  $("#verification").empty().append("<%=j render 'return_verification' %>");
+<% else %>
+  $("#verification").empty().append("<%=j render 'not_verified'%>");
+<% end %>

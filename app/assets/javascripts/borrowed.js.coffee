@@ -6,7 +6,9 @@ class Home
     $("#form").on("focus", "#item_available_until", Home.pick_until_date)
     $('#search_button').click(Home.search)
     $('#search_form').submit(Home.search)
+    $("#borrowing_items").on("click", ".return", Home.return_item)
     # $('#search').autocomplete({ source: Home.search_complete });
+
 
   @clear_form: (e) ->
     e.preventDefault()
@@ -31,7 +33,17 @@ class Home
       url: "/items/search?query=#{input}"
     $.ajax(settings)
 
+  @return_item: ->
+    borrow_id = $(this).parent().next().text()
+    $(this).parent().empty().text("A verification has been sent to the owner")
+    settings =
+      dataType: 'json'
+      type: 'get'
+      url: "/items/return_verification?borrow=#{borrow_id}"
+    $.ajax(settings).done()
+
   # @search_complete: (request, response) ->
   #   console.log(request)
+
 
 $(document).ready(Home.document_ready)

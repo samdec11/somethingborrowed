@@ -20,4 +20,15 @@ class Notifications < ActionMailer::Base
     @spec_instructions = spec_instructions
     mail :to => borrower.email, :from => "smthingborrowed@gmail.com", :subject => "#{owner.name}'s instructions for borrowing the #{item.name} you requested."
   end
+
+  def return_verification_message(borrow)
+    @borrow = borrow
+    mail :to => borrow.owner.email, :from => "smthingborrowed@gmail.com", :subject => "Please verify that #{borrow.borrower.name} returned your #{borrow.item.name}"
+  end
+
+  def review_later_message(borrow)
+    @borrow = borrow
+    attachments.inline['sblogo.jpg'] = File.read('app/assets/images/sblogo.jpg')
+    mail :to => borrow.owner.email, :from => "smthingborrowed@gmail.com", :subject => "Rating reminder from Something Borrowed"
+  end
 end

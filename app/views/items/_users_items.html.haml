@@ -8,7 +8,7 @@
     -@auth.items.each do |item|
       %tr
         %td= image_tag(item.image)
-        %td= item.name
+        %td= item.name.titleize
         %td= item.description
         %td= item.instructions
         %td= "#{item.available_from} => #{item.available_until}"
