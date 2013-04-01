@@ -5,18 +5,19 @@
 #  id              :integer          not null, primary key
 #  name            :string(255)
 #  email           :string(255)
-#  image           :text             default("batman.jpg")
+#  image           :text
 #  password_digest :string(255)
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #  address         :text
 #  lat             :float
 #  long            :float
+#  phone           :string(255)
 #
 
 class User < ActiveRecord::Base
   has_secure_password
-  attr_accessible :name, :email, :image, :password, :password_confirmation, :remote_image_url, :address
+  attr_accessible :name, :email, :image, :password, :password_confirmation, :remote_image_url, :address, :phone
   has_many :items
   has_many :reviews, :as => :reviewable
   has_many :reviews

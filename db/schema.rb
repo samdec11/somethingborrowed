@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130401142337) do
+ActiveRecord::Schema.define(:version => 20130401154747) do
 
   create_table "borrows", :force => true do |t|
     t.integer  "owner_id"
@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(:version => 20130401142337) do
     t.text     "address"
     t.float    "lat"
     t.float    "long"
+    t.string   "phone"
   end
 
 end
