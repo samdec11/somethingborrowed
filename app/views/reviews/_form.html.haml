@@ -1,0 +1,7 @@
+= form_for @review do |f|
+  = f.hidden_field :reviewable_id
+  = f.label :rating
+  = select_tag :rating, (1..5).map{|i| "<option>#{i}</option>"}.join.html_safe, :include_blank => true
+  = f.label :text
+  = f.text_field :text
+  = f.submit
