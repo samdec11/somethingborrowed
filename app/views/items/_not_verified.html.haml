@@ -1,0 +1,3 @@
+%p Some wording about the terms and conditions
+%p= "Please contact the borrower, #{@borrow.borrower.name}, directly to resolve this issue. #{@borrow.borrower.name}'s email address is"
+%a{:href => "mailto:#{@borrow.borrower.email}", :target => "_blank"}= "#{@borrow.borrower.email}"

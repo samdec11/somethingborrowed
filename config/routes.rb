@@ -5,10 +5,13 @@ Somethingborrowed::Application.routes.draw do
       get "map"
       get "borrow_instructions"
       post "deliver_borrow_instructions"
+      get 'search'
+      get 'return_verification'
+      get 'return_verification_validation'
+      post 'return'
     end
     member do
       get "borrow_request"
-      get 'search'
     end
   end
   resources :categories, :only => [:show]

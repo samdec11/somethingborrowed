@@ -18,4 +18,10 @@ class Borrow < ActiveRecord::Base
   belongs_to :item
   belongs_to :owner, :class_name => "User"
   belongs_to :borrower, :class_name => "User"
+
+  before_save :set_borrow_date
+
+  def set_borrow_date
+    self.borrow_date = Date.today.to_s
+  end
 end

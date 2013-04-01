@@ -1,0 +1,6 @@
+%p= "Dear #{@borrow.owner.name},"
+%p= "#{@borrow.borrower.name} says your #{@borrow.item.name} was returned. Please follow the link to verify this return:"
+%p
+  %a{:href => "/items/return_verification_validation?borrow=#{@borrow.id}"} Return Verification Form
+%p Thank you,
+%p Something Borrowed Staff

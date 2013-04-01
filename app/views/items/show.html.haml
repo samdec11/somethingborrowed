@@ -12,6 +12,6 @@
       = @item.instructions
 .row
   .small-8.small-centered.columns#request
-    -if @item.is_borrowed? != true && @auth.items.length != 0 && @item.user != @auth
+    -if @auth.present? && @item.is_borrowed? != true && @auth.items.length != 0 && @item.user != @auth
       %div= "This item is available until #{@item.available_until.to_s}"
       = link_to("Request Item", borrow_request_item_path(@item.id), :remote => true, :class => "button radius alert")

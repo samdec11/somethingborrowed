@@ -1,0 +1,20 @@
+%table
+  %tr
+    %th
+    %th Name
+    %th Description
+    %th Instructions
+    %th Due Date
+    %th Owner
+    %th
+    %th
+    -@auth.currently_borrowing.each do |borrow|
+      %tr
+        %td= image_tag(borrow.item.image)
+        %td= borrow.item.name.titleize
+        %td= borrow.item.description
+        %td= borrow.item.instructions
+        %td= borrow.item.available_until
+        %td= borrow.owner.name
+        %td= link_to("Return", "#", :class => "button radius small alert return")
+        %td= borrow.id

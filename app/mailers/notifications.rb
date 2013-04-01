@@ -20,4 +20,9 @@ class Notifications < ActionMailer::Base
     @spec_instructions = spec_instructions
     mail :to => borrower.email, :from => "smthingborrowed@gmail.com", :subject => "#{owner.name}'s instructions for borrowing the #{item.name} you requested."
   end
+
+  def return_verification_message(borrow)
+    @borrow = borrow
+    mail :to => borrow.owner.email, :from => "smthingborrowed@gmail.com", :subject => "Please verify that #{borrow.borrower.name} returned your #{borrow.item.name}"
+  end
 end
