@@ -5,6 +5,7 @@ class Notifications < ActionMailer::Base
     @owner = owner
     @borrower = borrower
     @item = item
+    attachments.inline['sblogo.jpg'] = File.read('app/assets/images/sblogo.jpg')
     mail :to => @owner.email, :subject => "#{borrower.name} wants to borrow your #{item.name}"
   end
 
@@ -17,12 +18,13 @@ class Notifications < ActionMailer::Base
     @email = email
     @phone = phone
     @spec_instructions = spec_instructions
-    binding.pry
+    attachments.inline['sblogo.jpg'] = File.read('app/assets/images/sblogo.jpg')
     mail :to => @borrower.email, :subject => "#{owner.name}'s instructions for borrowing the #{item.name} you requested."
   end
 
   def return_verification_message(borrow)
     @borrow = borrow
+    attachments.inline['sblogo.jpg'] = File.read('app/assets/images/sblogo.jpg')
     mail :to => @borrow.owner.email, :subject => "Please verify that #{borrow.borrower.name} returned your #{borrow.item.name}"
   end
 

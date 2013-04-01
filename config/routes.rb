@@ -19,9 +19,12 @@ Somethingborrowed::Application.routes.draw do
   resources :reviews do
     collection do
       get 'owner_review_choice'
+      get 'user'
+      get 'item'
     end
   end
   get '/login' => 'session#new'
   post '/login' => 'session#create'
+  post '/login2' => 'session#create2'
   delete '/login' => 'session#destroy'
 end

@@ -1,5 +1,6 @@
 %p= "Dear #{@borrow.owner.name},"
-%p= "Please take a quick moment to rate your interaction with #{@borrow.borrower.name}."
+%p= "Please take a quick moment to rate your interaction with #{@borrow.borrower.name} at the following link:"
+%a{:href => "/reviews/user?borrow=#{@borrow.id}"} Review
 %p Signed,
 = image_tag attachments['sblogo.jpg'].url
-%p SomethingBorrowed
+%p Something Borrowed Staff

@@ -1,0 +1,24 @@
+- if @auth.present? && @auth.id == @borrow.owner.id
+  %h4= "Did #{@borrow.borrower.name} return your #{@borrow.item.name}? Select one:"
+  =form_tag "/items/return", :remote => true do
+    %fieldset
+      %legend Return
+      =radio_button_tag :answer, "yes"
+      =label_tag :yes
+      %br
+      %br
+      =radio_button_tag :answer, "no"
+      =label_tag :no
+      =hidden_field_tag "borrow", @borrow.id
+      %br
+      %br
+      =submit_tag "Enter"
+- else
+  %h2= "Please log in as #{@borrow.owner.name} to continue"
+  =form_tag '/login2', :remote => true do
+    = hidden_field_tag 'borrow_id', params[:borrow]
+    =label_tag 'email'
+    =text_field_tag 'email', nil, :autofocus => true, :placeholder => "jane@doe.com"
+    =label_tag 'password'
+    =password_field_tag 'password'
+    =submit_tag 'Login', :class => "button radius tiny"

@@ -13,7 +13,7 @@ class Home
   @clear_form: (e) ->
     e.preventDefault()
     $('#form').empty()
-    $("#login_form").empty()
+    $("#login_form").slideUp().empty();
 
 
   @pick_from_date: (e) ->
@@ -33,7 +33,8 @@ class Home
       url: "/items/search?query=#{input}"
     $.ajax(settings)
 
-  @return_item: ->
+  @return_item: (e) ->
+    e.preventDefault()
     borrow_id = $(this).parent().next().text()
     $(this).parent().empty().text("A verification has been sent to the owner")
     settings =

@@ -8,4 +8,16 @@ class ReviewsController < ApplicationController
       @review = Review.new
     end
   end
+  def user
+    @review = Review.new
+    @borrow = Borrow.find(params[:borrow])
+  end
+  def item
+    @review = Review.new
+    @borrow = Borrow.find(params[:borrow])
+  end
+  def create
+    Review.create(params[:review])
+    redirect_to(user_path(@auth))
+  end
 end

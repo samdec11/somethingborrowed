@@ -13,7 +13,7 @@
 #
 
 class Review < ActiveRecord::Base
-  attr_accessible :title, :rating, :text
+  attr_accessible :title, :rating, :text, :reviewable_id, :reviewable_type, :user_id
   belongs_to :reviewable, :polymorphic => true
   belongs_to :user
   validates :title, :presence => true
