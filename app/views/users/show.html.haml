@@ -1,9 +1,11 @@
 .row
   .large-12.columns
-    %h1= "#{@auth.name}'s Account"
+    %div
+      #userimage= image_tag(@auth.image.thumb.url)
+      %h1#username= "#{@auth.name}'s Account"
 
 .row
-  .large-5.large-centered.columns
+  .large-5.columns
     = link_to 'New Item', new_item_path, :remote => true, :class => 'button round tiny'
     #form
 

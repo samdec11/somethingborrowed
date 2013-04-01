@@ -14,8 +14,7 @@ function display_map(lat, lng, zoom)
 
 function add_marker(lat, lng, title)
 {
-  var latlng = new google.maps.LatLng(lat, lng);
-  var marker = new google.maps.Marker({position: latlng, map: map, title: title});
+  var latlng = new google.maps.LatLng(lat, lng); var marker = new google.maps.Marker({position: latlng, map: map, title: title});
 }
 
 function add_init_marker(lat, lng, title)
@@ -25,3 +24,6 @@ function add_init_marker(lat, lng, title)
 }
 
 
+$(document).ready(function(){
+   add_marker(40.7963079, -73.9714147, 'blender');
+})

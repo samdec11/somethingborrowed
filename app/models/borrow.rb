@@ -11,6 +11,7 @@
 #  item_id     :integer
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  pending     :boolean          default(FALSE)
 #
 
 class Borrow < ActiveRecord::Base

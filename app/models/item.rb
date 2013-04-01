@@ -5,7 +5,7 @@
 #  id              :integer          not null, primary key
 #  name            :string(255)
 #  description     :string(255)
-#  image           :text             default("blender.jpg")
+#  image           :text
 #  instructions    :text
 #  user_id         :integer
 #  created_at      :datetime         not null

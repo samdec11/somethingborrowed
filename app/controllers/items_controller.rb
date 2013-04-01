@@ -38,7 +38,10 @@ class ItemsController < ApplicationController
   end
 
   def return_verification
-    Notifications.return_verification_message(Borrow.find(params[:borrow])).deliver
+    borrow = Borrow.find(params[:borrow])
+    borrow.pending = true
+    borrow.save
+    Notifications.return_verification_message(borrow).deliver
     render :json => "delivered"
   end
 
@@ -51,6 +54,7 @@ class ItemsController < ApplicationController
     if params[:answer] == "yes"
       @borrow.active = false
       @borrow.return_date = Date.today.to_s
+      @borrow.pending = false
       @borrow.save
       @borrow
     else

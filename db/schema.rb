@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130330182022) do
+ActiveRecord::Schema.define(:version => 20130401154747) do
 
   create_table "borrows", :force => true do |t|
     t.integer  "owner_id"
@@ -20,8 +20,9 @@ ActiveRecord::Schema.define(:version => 20130330182022) do
     t.date     "return_date"
     t.boolean  "active",      :default => true
     t.integer  "item_id"
-    t.datetime "created_at",                    :null => false
-    t.datetime "updated_at",                    :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
+    t.boolean  "pending",     :default => false
   end
 
   create_table "categories", :force => true do |t|
@@ -67,6 +68,7 @@ ActiveRecord::Schema.define(:version => 20130330182022) do
     t.text     "address"
     t.float    "lat"
     t.float    "long"
+    t.string   "phone"
   end
 
 end

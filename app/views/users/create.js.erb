@@ -1,0 +1,5 @@
+<% if @user.valid? %>
+  $('#login_form').empty().text('You have successfully added an account!');
+<% else %>
+  $('#login_form').effect("bounce", 500);
+<% end %>

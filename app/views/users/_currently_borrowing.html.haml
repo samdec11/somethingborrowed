@@ -16,5 +16,8 @@
         %td= borrow.item.instructions
         %td= borrow.item.available_until
         %td= borrow.owner.name
-        %td= link_to("Return", "#", :class => "button radius small alert return")
+        -if borrow.pending == false
+          %td= link_to("Return", "#", :class => "button radius small alert return")
+        -else
+          %td A verification has been sent to the owner
         %td= borrow.id
