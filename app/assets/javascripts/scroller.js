@@ -10,8 +10,6 @@ function overlay()
   a.text($(this).data().owner+"'s "+$(this).data().name);
   div.append(a);
   $(this).append(div);
-
-
 }
 
 function regular()

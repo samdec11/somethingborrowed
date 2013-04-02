@@ -3,15 +3,15 @@
     %h3= "#{@item.user.name.titleize}'s #{@item.name.titleize}"
 .row#item_show_info
   .small-8.small-centered.columns
-    = image_tag(@item.image)
+    #show_img= image_tag(@item.image)
     #description
-      Description:
+      .title Description:
       = @item.description
     #instructions
-      Special Instructions:
+      .title Special Instructions:
       = @item.instructions
 .row
   .small-8.small-centered.columns#request
     -if @auth.present? && @item.is_borrowed? != true && @auth.items.length != 0 && @item.user != @auth
-      %div= "This item is available until #{@item.available_until.to_s}"
+      %p= "This item is available until #{@item.available_until.to_s}"
       = link_to("Request Item", borrow_request_item_path(@item.id), :remote => true, :class => "button radius alert")
