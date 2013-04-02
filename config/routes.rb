@@ -9,6 +9,7 @@ Somethingborrowed::Application.routes.draw do
       get 'return_verification'
       get 'return_verification_validation'
       post 'return'
+      get 'autocomplete'
     end
     member do
       get "borrow_request"

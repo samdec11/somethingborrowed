@@ -7,7 +7,8 @@ class Home
     $('#search_button').click(Home.search)
     $('#search_form').submit(Home.search)
     $("#borrowing_items").on("click", ".return", Home.return_item)
-    # $('#search').autocomplete({ source: Home.search_complete });
+    Home.search_complete()
+
 
 
   @clear_form: (e) ->
@@ -42,8 +43,17 @@ class Home
       url: "/items/return_verification?borrow=#{borrow_id}"
     $.ajax(settings).done()
 
-  # @search_complete: (request, response) ->
-  #   console.log(request)
+  @search_complete: ->
+    text = $("#search").val()
+    settings =
+      dataType: 'json'
+      type: 'get'
+      url: "/items/autocomplete"
+    $.ajax(settings).done(Home.results)
+
+  @results: (message) ->
+    $('#search').autocomplete({ source: message });
+
 
 
 $(document).ready(Home.document_ready)

@@ -24,3 +24,20 @@
 #username, #userimage {
   display: inline-block;
 }
+
+.top-bar-section .dropdown li a:hover {
+  background: yellow;
+  color: black;
+}
+
+ul li img {
+  width: 200px;
+  height: 150px;
+}
+
+.item {
+  img {
+    width: 100px;
+    height: 100px;
+  }
+}

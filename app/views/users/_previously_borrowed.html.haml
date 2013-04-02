@@ -6,12 +6,12 @@
     %th Instructions
     %th Owner
     %th Time with Item
-    -@auth.previously_borrowed.each do |borrow|
+    -@user.previously_borrowed.each do |borrow|
       %tr
         %td= image_tag(borrow.item.image)
         %td= borrow.item.name.titleize
         %td= borrow.item.description
         %td= borrow.item.instructions
-        %td= borrow.owner.name
+        %td= link_to(borrow.owner.name, user_path(borrow.owner.id))
         %td= "#{borrow.borrow_date} => #{borrow.return_date}"
 
