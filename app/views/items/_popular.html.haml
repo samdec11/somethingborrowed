@@ -1,7 +1,7 @@
 %h3 Most Popular Items
 .row
   -@popular.each do |item|
-    .small-3.columns.item{:data => {name:"#{item.name}", description:"#{item.description}", id:"#{item.id}", image:"#{item.image}"}}= link_to(image_tag(item.image), item_path(item.id))
+    .small-3.columns.item{:data => {name:"#{item.name.titleize}", owner:"#{item.user.name}", id:"#{item.id}", image:"#{item.image}"}}= link_to(image_tag(item.image), item_path(item.id))
 
 
 

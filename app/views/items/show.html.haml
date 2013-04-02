@@ -1,7 +1,7 @@
 .row
   .small-12.columns
     %h3= "#{@item.user.name.titleize}'s #{@item.name.titleize}"
-.row
+.row#item_show_info
   .small-8.small-centered.columns
     = image_tag(@item.image)
     #description
