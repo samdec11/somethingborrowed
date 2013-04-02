@@ -4,9 +4,9 @@ Category.delete_all
 Borrow.delete_all
 
 u1 = User.create(name:"Jane", email:"janesternbach+1@gmail.com", password:"abc", password_confirmation:"abc", address:"251 W 98th St, New York, NY")
-u2 = User.create(name:"Sean", email:"seanwdicourse+1@gmail.com", password:"abc", password_confirmation:"abc", address:"10 E 21st St, New York, NY")
+u2 = User.create(name:"Sean", email:"samdec11+1@gmail.com", password:"abc", password_confirmation:"abc", address:"10 E 21st St, New York, NY")
 u3 = User.create(name:"Bob", email:"janesternbach+2@gmail.com", password:"abc", password_confirmation:"abc", address:"40 Charlton St, New York, NY")
-u4 = User.create(name:"Sue", email:"seanwdicourse+2@gmail.com", password:"abc", password_confirmation:"abc", address:"90 Park Ave, New York, NY")
+u4 = User.create(name:"Sue", email:"samdec11+2@gmail.com", password:"abc", password_confirmation:"abc", address:"90 Park Ave, New York, NY")
 
 i1 = Item.create(name:"blender", description:"A fully functional ice blending machine with top included", instructions:"insert items to be blended, place top securely, and press start button")
 i2 = Item.create(name:"toaster", description:"Or perhaps he's wondering why someone would shoot a man before throwing him out of the plane.", instructions:"Ooh, you think darkness is your ally? You merely adopted the dark, I was born in it. Molded by it. I didn't see the light until I was already a man. By then there was nothing to be but blinded.", available_from:"2013-03-29", available_until:"2013-04-10")
@@ -58,7 +58,3 @@ b2.active = true
 b2.borrow_date = Date.today
 b2.return_date = Date.tomorrow
 b2.save
-
-
-
-

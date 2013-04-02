@@ -13,10 +13,11 @@
 #
 
 class Review < ActiveRecord::Base
-  attr_accessible :title, :rating, :text
+  attr_accessible :title, :rating, :text, :reviewable_id, :reviewable_type, :user_id
   belongs_to :reviewable, :polymorphic => true
   belongs_to :user
   validates :title, :presence => true
+  validates :rating, :numericality => {greater_than: 0, less_than_or_equal_to: 5, only_integer: true}
 
   def item
     self.reviewable if self.reviewable.is_a?(Item)

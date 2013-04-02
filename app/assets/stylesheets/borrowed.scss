@@ -21,6 +21,10 @@
   font-family: 'Clicker Script', cursive;
 }
 
+fieldset label {
+  display: inline;
+}
+
 #username, #userimage {
   display: inline-block;
 }
@@ -40,4 +44,9 @@ ul li img {
     width: 100px;
     height: 100px;
   }
+}
+
+#search {
+  display: inline;
+  border-radius: 10px;
 }
