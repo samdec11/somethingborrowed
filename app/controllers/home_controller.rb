@@ -4,10 +4,7 @@ class HomeController < ApplicationController
     @popular = @popular[0,4]
     c = Category.all.select{|x| x.items.length >= 4 }
     @category1 = c.pop
-
     @category2 = c.pop
-
     @category3 = c.pop
-
   end
 end
