@@ -11,8 +11,6 @@
         %ul.dropdown
           - Category.order(:name).each do |category|
             %li= link_to category.name, category_path(category)
-
-      %li.divider
     %ul
       %li.search
         = form_tag '/items/search', :method => :get do
