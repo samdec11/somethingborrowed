@@ -19,7 +19,22 @@ class SessionController < ApplicationController
     if user.present? && user.authenticate(params[:password])
       session[:user_id] = user.id
       @borrow = Borrow.find(params[:borrow_id])
-      else
+    else
+      session[:user_id] = nil
+    end
+    authenticate
+  end
+
+  def create3
+    session[:user_id] = nil
+    authenticate
+    user = User.where(:email => params[:email]).first
+    if user.present? && user.authenticate(params[:password])
+      session[:user_id] = user.id
+      @item = Item.find(params[:item])
+      @borrower = User.find(params[:borrower])
+      @owner = User.find(params[:owner])
+    else
       session[:user_id] = nil
     end
     authenticate

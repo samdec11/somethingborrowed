@@ -1,23 +1,34 @@
-%table.user_table
-  %tr
-    %th
-    %th Name
-    %th Description
-    %th Instructions
-    %th Due Date
-    %th Owner
-    %th
-    %th
-    -@user.currently_borrowing.each do |borrow|
-      %tr
-        %td= image_tag(borrow.item.image)
-        %td= borrow.item.name.titleize
-        %td= borrow.item.description
-        %td= borrow.item.instructions
-        %td= borrow.item.available_until
-        %td= link_to(borrow.owner.name, user_path(borrow.owner.id))
-        -if borrow.pending == false
-          %td= link_to("Return", "#", :class => "button radius small alert return")
-        -else
-          %td A verification has been sent to the owner
-        %td= borrow.id
+- @user.currently_borrowing.each do |borrow|
+  .reveal-modal[borrow]
+    %h2 Please take a moment to review this item.
+    = render :partial => 'reviews/form', :locals => {:reviewable => borrow.item}
+    %a.close-reveal-modal ×
+- if @user.currently_borrowing.any?
+  %table.user_table
+    %tr
+      %th
+      %th Name
+      %th Description
+      %th Instructions
+      %th Due Date
+      %th Owner
+      %th
+      -@user.currently_borrowing.each do |borrow|
+        %tr
+          %td= image_tag(borrow.item.image)
+          %td= link_to borrow.item.name.titleize, borrow.item
+          %td= borrow.item.description
+          %td= borrow.item.instructions
+          %td= borrow.item.available_until.strftime('%d/%m/%y')
+          %td= link_to(borrow.owner.name, user_path(borrow.owner.id))
+          -if borrow.pending == false && @user == @auth
+            %td= link_to("Return", "#", :class => "button radius small alert return")
+          -elsif borrow.pending == true && @user == @auth
+            %td A verification has been sent to the owner
+          -else
+
+          %td.hide= borrow.id
+- else
+  %p None
+
+

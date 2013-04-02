@@ -3,7 +3,7 @@ class ReviewsController < ApplicationController
     @borrow = Borrow.find(params[:borrow_id])
     @response = params[:when_review]
     if @response == "later"
-      Notifications.review_later_message(borrow).deliver
+      Notifications.review_later_message(@borrow).deliver
     else
       @review = Review.new
     end

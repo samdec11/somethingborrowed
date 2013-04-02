@@ -1,0 +1,17 @@
+- if @user.borrower_reviews.any?
+  %table.review_table
+    %tr
+      %th Title
+      %th Rating
+      %th Details
+      %th Post Date
+      %th Reviewer
+    -@user.borrower_reviews.each do |review|
+      %tr
+        %td= review.title
+        %td= review.rating
+        %td= review.text
+        %td= review.post_date.strftime('%d/%m/%y')
+        %td= link_to(review.user.name, user_path(review.user))
+- else
+  %p None

@@ -1,17 +1,19 @@
-%table.user_table
-  %tr
-    %th
-    %th Name
-    %th Description
-    %th Instructions
-    %th Due Date
-    %th Borrower
+- if @user.currently_lending.any?
+  %table.user_table
+    %tr
+      %th
+      %th Name
+      %th Description
+      %th Instructions
+      %th Due Date
+      %th Borrower
     -@user.currently_lending.each do |borrow|
       %tr
         %td= image_tag(borrow.item.image)
-        %td= borrow.item.name.titleize
+        %td= link_to borrow.item.name.titleize, borrow.item
         %td= borrow.item.description
         %td= borrow.item.instructions
-        %td= borrow.item.available_until
+        %td= borrow.item.available_until.strftime('%d/%m/%y')
         %td= link_to(borrow.borrower.name, user_path(borrow.borrower.id))
-
+- else
+  %p None

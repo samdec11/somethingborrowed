@@ -1,0 +1,30 @@
+- if @auth.present? && @auth.id == @owner.id
+      %h4= "Please provide #{@borrower.name} with instructions on where and when to pick up your #{@item.name}."
+      =form_tag "/items/deliver_borrow_instructions", :remote => true do
+        %fieldset
+          %legend Instructions
+          =label_tag "where"
+          =text_field_tag "where"
+          =label_tag "when"
+          =text_field_tag "when"
+          =label_tag "phone"
+          =telephone_field_tag "phone"
+          =label_tag "email"
+          =text_field_tag "email"
+          =label_tag "special instructions"
+          =text_area_tag "special instructions"
+          =hidden_field_tag "owner", @owner.id
+          =hidden_field_tag "borrower", @borrower.id
+          =hidden_field_tag "item", @item.id
+          =submit_tag "Send Instructions"
+    - else
+      %h2= "Please log in as #{@owner.name} to continue"
+      =form_tag '/login3', :remote => true do
+        =hidden_field_tag "owner", @owner.id
+        =hidden_field_tag "borrower", @borrower.id
+        =hidden_field_tag "item", @item.id
+        =label_tag 'email'
+        =text_field_tag 'email', nil, :autofocus => true, :placeholder => "jane@doe.com"
+        =label_tag 'password'
+        =password_field_tag 'password'
+        =submit_tag 'Login', :class => "button radius tiny"
