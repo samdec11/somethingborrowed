@@ -15,10 +15,9 @@
       %li.divider
     %ul
       %li.search
-        %form#search_form
-          %input{:type => "search", :id => 'search', :placeholder => 'Start your search here!'}
-      %li.has-button
-        %a.small.button{:href => "#", :id => 'search_button'} Search
+        = form_tag '/items/search', :method => :get do
+          = text_field_tag :search, nil, :id => 'search', :placeholder => 'Start your search here!'
+          = submit_tag 'Search', :id => 'search_button', :class => 'button success round'
 
     / Right Nav Section
     %ul.right

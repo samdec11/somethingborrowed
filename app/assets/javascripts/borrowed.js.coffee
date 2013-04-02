@@ -4,10 +4,9 @@ class Home
     $("#login_form").on('click', 'a[data-clear-form]', Home.clear_form)
     $("#form").on("focus", "#item_available_from", Home.pick_from_date)
     $("#form").on("focus", "#item_available_until", Home.pick_until_date)
-    $('#search_button').click(Home.search)
-    $('#search_form').submit(Home.search)
+    # $('#search_button').click(Home.search)
+    # $('#search_form').submit(Home.search)
     $("#borrowing_items").on("click", ".return", Home.return_item)
-    # $('#search').autocomplete({ source: Home.search_complete });
 
 
   @clear_form: (e) ->
@@ -33,6 +32,7 @@ class Home
       url: "/items/search?query=#{input}"
     $.ajax(settings)
 
+
   @return_item: (e) ->
     e.preventDefault()
     borrow_id = $(this).parent().next().text()
@@ -42,9 +42,6 @@ class Home
       type: 'get'
       url: "/items/return_verification?borrow=#{borrow_id}"
     $.ajax(settings).done()
-
-  # @search_complete: (request, response) ->
-  #   console.log(request)
 
 
 $(document).ready(Home.document_ready)

@@ -33,8 +33,9 @@ class ItemsController < ApplicationController
   end
 
   def search
-    query = params[:query]
+    query = params[:search]
     @items = Item.where("name @@ :q or description @@ :q or image @@ :q", :q => query)
+    @popular = Item.all.sort_by!{|x| x.num_borrows}.reverse
   end
 
   def return_verification
