@@ -16,6 +16,7 @@
         = form_tag '/items/search', :method => :get do
           = text_field_tag :search, nil, :id => 'search', :placeholder => 'Start your search here!'
           = submit_tag 'Search', :id => 'search_button', :class => 'button success round'
+      %li#near_me_btn= link_to("Items Near Me", map_items_path, :class => "button round small")
 
     / Right Nav Section
     %ul.right

@@ -1,9 +1,11 @@
 .row
-  .small-10.columns
+  .small-12.columns
     %h1= @category.name
-    %table
-      %tr
+.row
+  .small-10.small-centered.columns
+    %ul.small-block-grid-4
       -@category.items.each do |item|
-        %td
-          = link_to(image_tag(item.image), item_path(item.id))
-          = link_to(item.name, item_path(item.id))
+        %li.grid_item
+          %div
+            = link_to(image_tag(item.image), item_path(item.id))
+            = link_to(item.name.titleize, item_path(item.id))

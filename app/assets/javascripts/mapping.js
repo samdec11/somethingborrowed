@@ -1,14 +1,7 @@
 var map;
 var init_marker;
 var infowindow;
-var contentString = '<div id="content">'+
-    '<div id="siteNotice">'+
-    '</div>'+
-    '<h1 id="firstHeading" class="firstHeading">Blender</h1>'+
-    '<div id="bodyContent">'+
-    '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>'+
-    '</div>'+
-    '</div>';
+
 
 
 $(document).ready(function(){
@@ -25,16 +18,26 @@ function display_map(lat, lng, zoom)
   };
   var canvas = $('#map_canvas')[0];
   map = new google.maps.Map(canvas, mapOptions);
-  infowindow = new google.maps.InfoWindow({content: contentString});
 }
 
 
-function add_marker(lat, lng, title)
+function add_marker(lat, lng, title, content1)
 {
   var latlng = new google.maps.LatLng(lat, lng);
   var marker = new google.maps.Marker({position: latlng, map: map, title: title});
+  var contentString = '<div class="row" id="infowindow">'+
+    '<div class="small-5 columns">'+
+    '<h1>'+content1.name+'</h1>'+
+    // '<img src="'+content1.image+'>"' +
+    '</div>'+
+    '<div class="small-7 columns">'+
+    '<p>Owner: '+content1.owner+'</p>'+
+    '<p>Location: '+content1.location+'</p>'+
+    '<p>Available Until: '+content1.availability+'</p>'+
+    '</div>'+
+    '</div>';
   marker.info = new google.maps.InfoWindow({
-    content: title
+    content: contentString
   });
   google.maps.event.addListener(marker, 'click', function(){marker.info.open(map, marker);});
 }

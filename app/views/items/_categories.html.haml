@@ -1,0 +1,20 @@
+%h3= item = @category1.name
+
+.row
+  -4.times do |i|
+    -item = @category1.items[i]
+    .small-3.columns.item{:data => {name:"#{item.name.titleize}", owner:"#{item.user.name}", id:"#{item.id}", image:"#{item.image}"}}= link_to(image_tag(item.image), item_path(item.id))
+
+%h3= item = @category2.name
+
+.row
+  -4.times do |i|
+    -item = @category2.items[i]
+    .small-3.columns.item{:data => {name:"#{item.name.titleize}", owner:"#{item.user.name}", id:"#{item.id}", image:"#{item.image}"}}= link_to(image_tag(item.image), item_path(item.id))
+
+%h3= item = @category3.name
+
+.row
+  -4.times do |i|
+    -item = @category3.items[i]
+    .small-3.columns.item{:data => {name:"#{item.name.titleize}", owner:"#{item.user.name}", id:"#{item.id}", image:"#{item.image}"}}= link_to(image_tag(item.image), item_path(item.id))

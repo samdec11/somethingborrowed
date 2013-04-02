@@ -1,12 +1,10 @@
 .row
   .small-10.small-centered.columns
-    #content
-      = render 'items/popular'
-      %h3 Search results
+    %h3 Search results
     #results
-      %table
-        %tr
+      %ul.small-block-grid-4
         -@items.each do |item|
-          %td
-            = image_tag(item.image)
-            = item.name
+          %li.grid_item
+            %div
+              = link_to(image_tag(item.image), item_path(item.id))
+              = link_to(item.name.titleize, item_path(item.id))
