@@ -6,19 +6,6 @@
   <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE']}&sensor=false" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-  <style type="text/css">
-    #container {margin: 0 auto; width: 960px; padding-top: 60px;}
-    #slider {position: relative; width: 830px; margin: 0 auto;}
-    #slider .holder_cont {width: 770px; margin: 0 auto; overflow: hidden;}
-    #slider .holder {width: 10000px; height: 156px;}
-    #slider .slide {position: relative; margin-right: 10px; float:left; width: 250px; height: 156px; border-radius: 15px; -moz-border-radius: 15px;}
-    #slider .slide .caption {display: none; position: absolute; bottom: 0; left: 0;background: #FFF; padding: 10px; opacity: 0.8; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; -moz-border-radius-bottomleft: 15px; -moz-border-radius-bottomright: 15px;}
-    #slider .button {position: absolute;}
-    #slider .prev {top: 5%; left: -80px;}
-    #slider .next {top: 5%; right: -80px;}
-    h4 {font-size: 18px; font-weight: bold; margin-bottom: 15px;}
-    .clear {clear:both;}
-  </style>
 </head>
 <body>
   <div><h1 id="logo">Something Borrowed</h1></div>
@@ -32,6 +19,18 @@
   </div>
 
 <%= yield %>
+
+  <footer class="row">
+    <div class="large-12 columns"><hr>
+      <div class="row">
+        <div class="large-6 columns">
+          <p>&copy; 2013 Something Borrowed</p>
+        </div>
+        <div class="large-6 columns">
+        </div>
+      </div>
+    </div>
+  </footer>
 
 </body>
 </html>

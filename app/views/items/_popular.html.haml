@@ -1,9 +1,7 @@
 %h3 Most Popular Items
-
-%table
-  %tr
-    -@popular.each do |item|
-      %td.item{:data => {name:"#{item.name}", description:"#{item.description}", id:"#{item.id}", image:"#{item.image}"}}= link_to(image_tag(item.image), item_path(item.id))
+.row
+  -@popular.each do |item|
+    .small-3.columns.item{:data => {name:"#{item.name}", description:"#{item.description}", id:"#{item.id}", image:"#{item.image}"}}= link_to(image_tag(item.image), item_path(item.id))
 
 
 
