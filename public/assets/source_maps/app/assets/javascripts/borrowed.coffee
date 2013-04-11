@@ -33,6 +33,7 @@ class Home
   @return_item: (e) ->
     e.preventDefault()
     borrow_id = $(this).parent().next().text()
+    $("#borrow_#{borrow_id}").foundation('reveal', 'open')
     $(this).parent().empty().text("A verification has been sent to the owner")
     settings =
       dataType: 'json'

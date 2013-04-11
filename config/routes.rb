@@ -27,5 +27,6 @@ Somethingborrowed::Application.routes.draw do
   get '/login' => 'session#new'
   post '/login' => 'session#create'
   post '/login2' => 'session#create2'
+  post '/login3' => 'session#create3'
   delete '/login' => 'session#destroy'
 end

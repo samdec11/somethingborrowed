@@ -2,11 +2,12 @@ User.delete_all
 Item.delete_all
 Category.delete_all
 Borrow.delete_all
+Review.delete_all
 
-u1 = User.create(name:"Jane", email:"janesternbach+1@gmail.com", password:"abc", password_confirmation:"abc", address:"251 W 98th St, New York, NY")
-u2 = User.create(name:"Sean", email:"samdec11+1@gmail.com", password:"abc", password_confirmation:"abc", address:"10 E 21st St, New York, NY")
-u3 = User.create(name:"Bob", email:"janesternbach+2@gmail.com", password:"abc", password_confirmation:"abc", address:"40 Charlton St, New York, NY")
-u4 = User.create(name:"Sue", email:"samdec11+2@gmail.com", password:"abc", password_confirmation:"abc", address:"90 Park Ave, New York, NY")
+u1 = User.create(name:"Jane", email:"samdec11+2@gmail.com", password:"abc", password_confirmation:"abc", address:"251 W 98th St, New York, NY", phone: '(212) 867-5309')
+u2 = User.create(name:"Sean", email:"samdec11+1@gmail.com", password:"abc", password_confirmation:"abc", address:"10 E 21st St, New York, NY", phone: '(212) 867-5309')
+u3 = User.create(name:"Bob", email:"samdec11+3@gmail.com", password:"abc", password_confirmation:"abc", address:"40 Charlton St, New York, NY", phone: '(212) 867-5309')
+u4 = User.create(name:"Sue", email:"samdec11+4@gmail.com", password:"abc", password_confirmation:"abc", address:"90 Park Ave, New York, NY", phone: '(212) 867-5309')
 
 
 i1 = Item.create(name:"toaster", remote_image_url:"https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQds5inCDYf_FMY8vi06CgrH0W0wpslMXQPe8qWEP0P5wBV87qXZA")

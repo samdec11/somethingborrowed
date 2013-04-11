@@ -5,4 +5,41 @@
 
 
 
-
+.row
+  .small-12.columns
+    #container
+      #body
+        #slider
+          %a.button.prev{:href => "#", :rel => "nofollow"}
+            =image_tag("img/prev.png")
+          %a.button.next{:href => "#", :rel => "nofollow"}
+            =image_tag("img/next.png")
+          .holder_cont
+            %ul.holder
+              %li.slide.first
+                .caption
+                  %h4 Vivamus nisl
+                  %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ultricies iaculis dictum.
+              %li.slide
+                .caption
+                  %h4 Aliquam in est purus.
+                  %p Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.
+              %li.slide
+                .caption
+                  %h4 Mauris ultricies
+                  %p Maecenas viverra placerat massa id iaculis. Mauris ultricies posuere nisi, ut dignissim libero lacinia eget.
+              %li.slide
+                .caption
+                  %h4 Fusce porttitor
+                  %p Sed ultrices ipsum vel risus rhoncus suscipit. Nulla nulla sapien, rhoncus eget vehicula et, aliquam a justo.
+              %li.slide
+                .caption
+                  %h4 Suspendisse interdum
+                  %p Fusce rutrum, orci ac dictum gravida, massa massa eleifend tortor.
+              %li.slide
+                .caption
+                  %h4 Aliquam aliquet
+                  %p Phasellus quis sapien purus, id euismod nibh.
+          .clear
+        %script
+          $(window).load(carousel_load());

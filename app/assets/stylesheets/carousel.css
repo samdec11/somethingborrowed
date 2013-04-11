@@ -1,0 +1,11 @@
+#container {margin: 0 auto; width: 960px; padding-top: 60px;}
+#slider {position: relative; width: 830px; margin: 0 auto;}
+#slider .holder_cont {width: 770px; margin: 0 auto; overflow: hidden;}
+#slider .holder {width: 10000px; height: 156px;}
+#slider .slide {position: relative; margin-right: 10px; float:left; width: 250px; height: 156px; border-radius: 15px; -moz-border-radius: 15px;}
+#slider .slide .caption {display: none; position: absolute; bottom: 0; left: 0;background: #FFF; padding: 10px; opacity: 0.8; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; -moz-border-radius-bottomleft: 15px; -moz-border-radius-bottomright: 15px;}
+#slider .button {position: absolute;}
+#slider .prev {top: 5%; left: -80px;}
+#slider .next {top: 5%; right: -80px;}
+h4 {font-size: 18px; font-weight: bold; margin-bottom: 15px;}
+.clear {clear:both;}

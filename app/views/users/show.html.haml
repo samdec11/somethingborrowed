@@ -40,5 +40,10 @@
 .row
   .large-12.large-centered.columns
     %h4 Previously Lent
-    #borrowed_items
+    #lent_items
       = render 'previously_lent'
+.row
+  .large.12.large-centered.columns
+    %h4 My reviews
+    #reviews
+      = render 'reviews/user_reviews'

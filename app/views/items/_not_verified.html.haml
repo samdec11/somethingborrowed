@@ -1,3 +1,8 @@
-%p Some wording about the terms and conditions
-%p= "Please contact the borrower, #{@borrow.borrower.name}, directly to resolve this issue. #{@borrow.borrower.name}'s email address is"
-%a{:href => "mailto:#{@borrow.borrower.email}", :target => "_blank"}= "#{@borrow.borrower.email}"
+%h4 *Something Borrowed reminds you that we are not liable for any lost or stolen items.*
+%h5= "Please contact the borrower, #{@borrow.borrower.name}, directly to resolve this issue."
+%h5
+  Email:
+  %a{:href => "mailto:#{@borrow.borrower.email}"}= "#{@borrow.borrower.email}"
+%h5
+  Phone:
+  = @borrow.borrower.phone

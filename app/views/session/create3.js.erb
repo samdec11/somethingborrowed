@@ -1,0 +1,8 @@
+<% if @auth.present? %>
+  $("#nav_holder").empty().append("<%=j render :partial => 'layouts/nav' %>");
+  $('#instructions').empty().append('<%=j render 'items/instructions' %>')
+<% else %>
+  $('#email').val('');
+  $('#password').val('');
+  $('#instructions').effect('shake');
+<% end %>
