@@ -1,8 +1,45 @@
 %h3 Most Popular Items
-#pop
-  %table
-    %tr
-    -@popular.each do |pop|
-      %td
-        = link_to(image_tag(pop.image), item_path(pop.id))
-        = link_to(pop.name, item_path(pop.id))
+.row
+  -@popular.each do |item|
+    .small-3.columns.item{:data => {name:"#{item.name.titleize}", owner:"#{item.user.name}", id:"#{item.id}", image:"#{item.image}"}}= link_to(image_tag(item.image), item_path(item.id))
+
+
+
+.row
+  .small-12.columns
+    #container
+      #body
+        #slider
+          %a.button.prev{:href => "#", :rel => "nofollow"}
+            =image_tag("img/prev.png")
+          %a.button.next{:href => "#", :rel => "nofollow"}
+            =image_tag("img/next.png")
+          .holder_cont
+            %ul.holder
+              %li.slide.first
+                .caption
+                  %h4 Vivamus nisl
+                  %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ultricies iaculis dictum.
+              %li.slide
+                .caption
+                  %h4 Aliquam in est purus.
+                  %p Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.
+              %li.slide
+                .caption
+                  %h4 Mauris ultricies
+                  %p Maecenas viverra placerat massa id iaculis. Mauris ultricies posuere nisi, ut dignissim libero lacinia eget.
+              %li.slide
+                .caption
+                  %h4 Fusce porttitor
+                  %p Sed ultrices ipsum vel risus rhoncus suscipit. Nulla nulla sapien, rhoncus eget vehicula et, aliquam a justo.
+              %li.slide
+                .caption
+                  %h4 Suspendisse interdum
+                  %p Fusce rutrum, orci ac dictum gravida, massa massa eleifend tortor.
+              %li.slide
+                .caption
+                  %h4 Aliquam aliquet
+                  %p Phasellus quis sapien purus, id euismod nibh.
+          .clear
+        %script
+          $(window).load(carousel_load());

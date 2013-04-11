@@ -1,0 +1,15 @@
+%h3 Return verified. Thank you!
+%h3 Would you like to review this transaction now or later?
+= form_tag '/reviews/owner_review_choice', :method => :get, :remote => true do
+  %fieldset
+    %legend Review
+    = radio_button_tag('when_review', 'now')
+    = label_tag :now
+    %br
+    %br
+    = radio_button_tag('when_review', 'later')
+    = label_tag :later
+    = hidden_field_tag :borrow_id, params[:borrow]
+    %br
+    %br
+    = submit_tag 'Send'

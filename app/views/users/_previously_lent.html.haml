@@ -1,17 +1,19 @@
-%table
-  %tr
-    %th
-    %th Name
-    %th Description
-    %th Instructions
-    %th Borrower
-    %th Time with Item
-    -@auth.previously_lent.each do |borrow|
+- if @user.previously_lent.any?
+  %table.user_table
+    %tr
+      %th
+      %th Name
+      %th Description
+      %th Instructions
+      %th Borrower
+      %th Time with Item
+    -@user.previously_lent.each do |borrow|
       %tr
-        %td= image_tag(borrow.item.image)
-        %td= borrow.item.name.titleize
-        %td= borrow.item.description
-        %td= borrow.item.instructions
-        %td= borrow.borrower.name
-        %td= "#{borrow.borrow_date} => #{borrow.return_date}"
-
+      %td= image_tag(borrow.item.image)
+      %td= link_to borrow.item.name.titleize, borrow.item
+      %td= borrow.item.description
+      %td= borrow.item.instructions
+      %td= link_to(borrow.borrower.name, user_path(borrow.borrower.id))
+      %td= "#{borrow.borrow_date.strftime('%d/%m/%y')} => #{borrow.return_date.strftime('%d/%m/%y')}"
+- else
+  %p None

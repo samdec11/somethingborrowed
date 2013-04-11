@@ -33,8 +33,10 @@ class ItemsController < ApplicationController
   end
 
   def search
-    query = params[:query]
-    @items = Item.where("name @@ :q or description @@ :q or image @@ :q", :q => query)
+    query = params[:search]
+    @items = Item.where("name @@ :q or description @@ :q or image @@ :q or instructions @@ :q", :q => query)
+    @popular = Item.all.sort_by!{|x| x.num_borrows}.reverse
+    @popular = @popular[0,4]
   end
 
   def return_verification
@@ -60,5 +62,16 @@ class ItemsController < ApplicationController
     else
       @borrow
     end
+  end
+
+  def autocomplete
+    names = Item.all.map(&:name)
+    descriptions = Item.all.map(&:description)
+    descriptions = descriptions.map{|x| x.split(" ")}.flatten
+    instructions = Item.all.map(&:instructions)
+    instructions = instructions.map{|x| x.split(" ")}.flatten
+    words = (names+descriptions+instructions).flatten.uniq
+    words = words.map { |x| x.gsub("?", "").gsub(".", "").gsub(",", "").gsub("!", "")}
+    render :json => words
   end
 end

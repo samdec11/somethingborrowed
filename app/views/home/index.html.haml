@@ -1,9 +1,10 @@
 .row
   .small-9.small-centered.columns
     #map_search
-      = link_to("Items Near Me", map_items_path, :class => "button radius")
+
 
 .row
   .small-10.small-centered.columns
     #content
       = render 'items/popular'
+      = render 'items/categories'

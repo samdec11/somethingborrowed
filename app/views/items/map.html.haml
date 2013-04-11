@@ -5,11 +5,8 @@
 %script
   navigator.geolocation.getCurrentPosition(function(p){
   display_map(p.coords.latitude, p.coords.longitude, 13);
-  add_init_marker(p.coords.latitude, p.coords.longitude, "10")
+  add_init_marker(p.coords.latitude, p.coords.longitude, "10");
   - @items.each do |item|
-    = "add_marker(#{item.lat}, #{item.long}, '#{item.name}');"
+    ="var content = {name:'#{item.name.titleize}', owner:'#{item.user.name}', location:'#{item.user.address}', availability:'#{item.available_until}', image:'#{item.image}'}"
+    = "add_marker(#{item.lat}, #{item.long}, '#{item.name}', content);"
   });
-
-
-
-

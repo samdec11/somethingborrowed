@@ -1,0 +1,16 @@
+%h3= "Review of #{reviewable.name}"
+= form_for @review do |f|
+  = f.hidden_field :reviewable_type, :value => reviewable.class
+  = f.hidden_field :reviewable_id, :value => reviewable.id
+  = f.hidden_field :user_id, :value => @auth.id
+  = f.label :title
+  = f.text_field :title
+  = f.label :rating, 'Rating from 1(worst) to 5(best)'
+  = f.select :rating, (1..5).map{|i| "<option>#{i}</option>"}.join.html_safe, :include_blank => true
+  %br
+  %br
+  = f.label :text, 'Detailed description'
+  = f.text_area :text
+  %br
+  %br
+  = f.submit 'Post Review', :class => 'button small'

@@ -9,6 +9,7 @@ Somethingborrowed::Application.routes.draw do
       get 'return_verification'
       get 'return_verification_validation'
       post 'return'
+      get 'autocomplete'
     end
     member do
       get "borrow_request"
@@ -16,7 +17,16 @@ Somethingborrowed::Application.routes.draw do
   end
   resources :categories, :only => [:show]
   resources :users
+  resources :reviews do
+    collection do
+      get 'owner_review_choice'
+      get 'user'
+      get 'item'
+    end
+  end
   get '/login' => 'session#new'
   post '/login' => 'session#create'
+  post '/login2' => 'session#create2'
+  post '/login3' => 'session#create3'
   delete '/login' => 'session#destroy'
 end

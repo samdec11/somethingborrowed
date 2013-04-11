@@ -1,0 +1,9 @@
+function carousel_load(){
+  var images = ['<%= asset_path("img/1.jpg") %>', '<%= asset_path("img/2.jpg") %>', '<%= asset_path("img/3.jpg") %>', '<%= asset_path("img/4.jpg") %>', '<%= asset_path("img/5.jpg") %>', '<%= asset_path("img/6.jpg") %>'];
+  $('#slider').append("<img src='<%= asset_path("img/loader.gif") %>' id='slider_loader' style='position:absolute; top:45%; left:45%;'/>");
+  $.preloadImages(images, init);
+  function init() {
+    $('#slider_loader').remove();
+    $('#slider').imgSlider(images);
+  }
+}

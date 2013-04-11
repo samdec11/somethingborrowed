@@ -1,14 +1,18 @@
-%table
-  %tr
-    %th
-    %th Name
-    %th Description
-    %th Instructions
-    %th Availability
-    -@auth.items.each do |item|
-      %tr
-        %td= image_tag(item.image)
-        %td= item.name.titleize
-        %td= item.description
-        %td= item.instructions
-        %td= "#{item.available_from} => #{item.available_until}"
+- if @user.items.any?
+  %table.user_table
+    %tr
+      %th
+      %th Name
+      %th Description
+      %th Instructions
+      %th Availability
+      -@user.items.each do |item|
+        %tr
+          %td= image_tag(item.image)
+          %td= link_to item.name.titleize, item
+          %td= item.description
+          %td= item.instructions
+          - if item.available_from.present?
+            %td= "#{item.available_from.strftime('%d/%m/%y')} => #{item.available_until.strftime('%d/%m/%y')}"
+- else
+  %p None

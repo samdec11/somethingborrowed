@@ -17,7 +17,6 @@
 class Item < ActiveRecord::Base
   attr_accessible :name, :description, :image, :instructions, :remote_image_url, :available_until, :available_from
   validates :name, :presence => true
-  validates :description, :presence => true
   has_and_belongs_to_many :categories
   has_many :borrows
   has_many :reviews, :as => :reviewable

@@ -1,4 +1,15 @@
 @import url(http://fonts.googleapis.com/css?family=Clicker+Script);
+@import url(http://fonts.googleapis.com/css?family=Croissant+One|Give+You+Glory|Rochester|Vidaloka|Pacifico|Handlee|Rancho);
+
+body {
+  background-color: #575757;
+  font-family: 'Vidaloka', serif;
+}
+
+h3 {
+  color: #F0D900;
+  font-family: 'Vidaloka', serif;
+}
 
 #side-nav {
   position: absolute;
@@ -16,11 +27,157 @@
   width: 500px;
 }
 
-#logo {
-  padding-left: 10px;
-  font-family: 'Clicker Script', cursive;
+#logo_holder {
+  background: #75C5B1;
+  #logo {
+    padding-left: 10px;
+    font-family: 'Clicker Script', cursive;
+    margin: 0px;
+    color: #F0D900;
+  }
+}
+
+#body {
+  background: #75C5B1;
+  padding: 10px;
+}
+
+#login_holder {
+  background: #F0D900;
+  padding-top: 10px;
+}
+
+
+
+fieldset label {
+  display: inline;
 }
 
 #username, #userimage {
   display: inline-block;
 }
+
+.top-bar-section .dropdown li a:hover {
+  background: #F0D900;
+  color: black;
+}
+
+ul li img {
+  width: 200px;
+  height: 150px;
+}
+
+.item {
+  img {
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    padding: 10px;
+    background-color: white;
+  }
+  margin-bottom: 5px;
+}
+
+#search {
+  display: inline;
+  border-radius: 10px;
+}
+
+#near_me_btn {
+  margin-left: 10px;
+}
+
+.grid_item {
+  div {
+    border: 1px solid black;
+    margin: 10px;
+    padding: 5px;
+    background: white;
+  }
+}
+
+.user_table {
+  td {
+    img {
+      width: 250px;
+      height: 100px;
+      border: 1px solid black;
+    }
+  }
+}
+
+#user_info {
+  padding-top: 20px;
+}
+
+p {
+  margin-bottom: 0px;
+}
+
+#infowindow {
+  max-width: 300px;
+  h1 {
+    font-size: 20px;
+  }
+  p {
+    font-size: 13px;
+  }
+}
+
+.item_hover {
+  position: absolute;
+  top: 0px;
+  text-align: center;
+  background-color: black;
+  opacity: 0.6;
+  height: 200px;
+  width: 180px;
+  color: white;
+  a {
+    margin-top: 10px;
+  }
+}
+
+#item_show_info {
+  img {
+    height: 300px;
+    width: 300px;
+    margin: auto;
+    border: 1px solid black;
+  }
+}
+
+.title {
+  font-weight: bold;
+  font-family: 'Clicker Script', cursive;
+  color: #F0D900;
+  font-size: 30px;
+}
+
+#show_img {
+  img {
+    background: #F0D900;
+    padding: 10px;
+  }
+}
+#request {
+  text-align: center;
+  a {
+    margin: auto;
+  }
+  p {
+    font-weight: bold;
+    font-family: 'Clicker Script', cursive;
+    color: #F0D900;
+    font-size: 30px;
+  }
+}
+
+table {
+  width: 100%;
+}
+
+.review_table {
+  text-align: left;
+}
+

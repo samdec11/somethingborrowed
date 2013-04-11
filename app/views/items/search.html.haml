@@ -1,0 +1,10 @@
+.row
+  .small-10.small-centered.columns
+    %h3 Search results
+    #results
+      %ul.small-block-grid-4
+        -@items.each do |item|
+          %li.grid_item
+            %div
+              = link_to(image_tag(item.image), item_path(item.id))
+              = link_to(item.name.titleize, item_path(item.id))

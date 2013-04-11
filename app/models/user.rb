@@ -41,6 +41,9 @@ class User < ActiveRecord::Base
   def previously_lent
     Borrow.where(:owner_id => self.id).where(:active => false)
   end
+  def borrower_reviews
+    Review.where(:reviewable_id => self.id).where(:reviewable_type => self.class)
+  end
 
   before_save :get_coords
   private

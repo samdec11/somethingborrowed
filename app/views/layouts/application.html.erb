@@ -3,22 +3,37 @@
 <head>
   <title>Somethingborrowed</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
   <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE']}&sensor=false" %>
+  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div><h1 id="logo">Something Borrowed</h1></div>
+  <div id ="logo_holder"><h1 id="logo">Something Borrowed</h1></div>
   <div id="nav_holder">
     <%= render :partial => 'layouts/nav' %>
   </div>
-  <div class="row">
-    <div class="small-3 small-offset-9">
+  <div class="row" id="login_holder">
+    <div class="small-3 small-centered columns">
       <div id="login_form"></div>
     </div>
   </div>
 
-<%= yield %>
+  <div id="body" class="row">
+    <%= yield %>
+      <footer class="row">
+        <div class="large-12 columns"><hr>
+          <div class="row">
+            <div class="large-6 columns">
+              <p>&copy; 2013 Something Borrowed</p>
+            </div>
+            <div class="large-6 columns">
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+
 
 </body>
 </html>

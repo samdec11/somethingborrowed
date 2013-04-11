@@ -1,13 +1,17 @@
 .row
-  .large-12.columns
-    %div
-      #userimage= image_tag(@auth.image.thumb.url)
-      %h1#username= "#{@auth.name}'s Account"
+  .large-2.columns#user_info
+    #userimage= image_tag(@user.image.thumb.url)
+  .large-10.columns
+    %h1#username= "#{@user.name}'s Account"
+    %p="Address: #{@user.address}"
+    %p="Phone: #{number_to_phone(@user.phone)}"
+    %p="Email: #{@user.email}"
 
 .row
-  .large-5.columns
-    = link_to 'New Item', new_item_path, :remote => true, :class => 'button round tiny'
-    #form
+  .large-8.columns
+    -if @user == @auth
+      = link_to 'New Item', new_item_path, :remote => true, :class => 'button round tiny'
+      #form
 
 .row
   .large-12.large-centered.columns
@@ -36,5 +40,10 @@
 .row
   .large-12.large-centered.columns
     %h4 Previously Lent
-    #borrowed_items
+    #lent_items
       = render 'previously_lent'
+.row
+  .large.12.large-centered.columns
+    %h4 My reviews
+    #reviews
+      = render 'reviews/user_reviews'

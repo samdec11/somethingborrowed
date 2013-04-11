@@ -1,12 +1,3 @@
 .row
   .small-8.small-centered.columns#verification
-    %h4= "Did #{@borrow.borrower.name} return your #{@borrow.item.name}? Select one:"
-    =form_tag "/items/return", :remote => true do
-      %fieldset
-        %legend Return
-        =label_tag :yes
-        =radio_button_tag :answer, "yes"
-        =label_tag :no
-        =radio_button_tag :answer, "no"
-        =hidden_field_tag "borrow", @borrow.id
-        =submit_tag "Enter"
+    = render 'reviews/verify'
