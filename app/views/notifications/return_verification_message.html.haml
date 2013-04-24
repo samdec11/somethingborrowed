@@ -2,7 +2,7 @@
 %p= "#{@borrow.borrower.name} says your #{@borrow.item.name} was returned. Please follow the link to verify this return:"
 %p
   / = link_to 'Return Verification Form'
-  %a{:href => "/items/return_verification_validation?borrow=#{@borrow.id}"} Return Verification Form
+  %a{:href => "http://somethingborrowed.herokuapp.com/items/return_verification_validation?borrow=#{@borrow.id}"} Return Verification Form
 %p Thank you,
 = image_tag attachments['sblogo.jpg'].url
 %p Something Borrowed Staff

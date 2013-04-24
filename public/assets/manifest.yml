@@ -29,8 +29,8 @@ sblogo.jpg: sblogo-919f7b0fb8d05586dda077f7ea0adf52.jpg
 sblogo/index.jpg: sblogo-919f7b0fb8d05586dda077f7ea0adf52.jpg
 application.js: application-4a5ba970d74a2bfa8950d412ff4471f0.js
 application/index.js: application-4a5ba970d74a2bfa8950d412ff4471f0.js
-application.css: application-9048303205bd69ac2d0f5f870070cd7f.css
-application/index.css: application-9048303205bd69ac2d0f5f870070cd7f.css
+application.css: application-da4760f9fd0c5c2a992f886d539f81fe.css
+application/index.css: application-da4760f9fd0c5c2a992f886d539f81fe.css
 foundation/humans.txt: foundation/humans-59b78915426ea963087e781bf2006285.txt
 foundation/humans/index.txt: foundation/humans-59b78915426ea963087e781bf2006285.txt
 foundation/index.html: foundation/index-0f881a6088659b75897a074c0cdcc912.html
